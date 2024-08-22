@@ -1,5 +1,4 @@
 <?php
-namespace Tempel;
 
 // Partials function
 function partial($partial)

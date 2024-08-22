@@ -16,7 +16,7 @@ const sass = gulpSass(dartSass);
 
 const paths = {
     scripts: {
-        source: 'assets/js/script.js',
+        source: 'assets/js/scripts.js',
         destination: 'dist/js/',
         destinationWatcher: 'dist/js/script.min.js'
     },
@@ -45,7 +45,7 @@ export function styles() {
         .pipe(autoprefixer({
             cascade: false
         }))
-        .pipe(concat('style.min.css'))
+        .pipe(concat('styles.min.css'))
         .pipe(gulp.dest(paths.sass.destination))
         .pipe(reload({stream: true}));
 }

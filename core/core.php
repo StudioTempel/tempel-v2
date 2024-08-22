@@ -4,6 +4,9 @@ namespace Tempel;
 
 require_once "plugin_overrides.php";
 require_once "defines.php";
+require_once "helpers.php";
+
+
 
 use Tempel\TempelPluginOverrides;
 

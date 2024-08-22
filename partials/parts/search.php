@@ -18,14 +18,36 @@
             }
 
             let xhr = new XMLHttpRequest();
-            xhr.open("GET", "<?php echo admin_url('admin-ajax.php'); ?>?action=ajax_search&query=" + query, true);
+            let url = "<?php echo admin_url('admin-ajax.php'); ?>";
+            let params = "action=ajax_search&query=" + encodeURIComponent(query);
+
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
             xhr.onload = function() {
                 if (this.status === 200) {
-                    searchResults.innerHTML = this.responseText;
+                    try {
+                        let response = JSON.parse(this.responseText);
+                        if (response.success) {
+                            let results = response.data;
+                            let resultsHtml = '<ul>';
+                            results.forEach(function(result) {
+                                resultsHtml += '<li><a href="' + result.url + '">' + result.title + '</a></li>';
+                            });
+                            resultsHtml += '</ul>';
+                            searchResults.innerHTML = resultsHtml;
+                        } else {
+                            searchResults.innerHTML = '<p>No results found</p>';
+                        }
+                    } catch (e) {
+                        console.error('Error parsing JSON:', e);
+                    }
+                } else {
+                    searchResults.innerHTML = '<p>There was an error with the search request.</p>';
                 }
             };
 
-            xhr.send();
+            xhr.send(params);
         });
     });
+</script>
