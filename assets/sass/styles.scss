@@ -7,6 +7,7 @@
 
 @import "blocks/navigation";
 @import "blocks/buttons";
+@import "blocks/searchform";
 
 
 html {
@@ -48,9 +49,6 @@ section, nav {
   margin: 50px 0;
 }
 
-
-
-
 .container {
   width: 100%;
   max-width: $container-max;
@@ -66,55 +64,3 @@ article {
   flex: 0 auto;
 }
 
-#searchform {
-  position: relative;
-  display: flex;
-
-  input {
-    min-width: 400px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-
-  #search-results {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 100%;
-    background-color: #fff;
-    @include radius;
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-
-      li {
-        padding: 10px;
-        border-bottom: 1px solid #ccc;
-
-        &:last-child {
-          border-bottom: none;
-        }
-
-        a {
-          color: #333;
-          text-decoration: none;
-          display: block;
-
-          &:hover {
-            background-color: #f0f0f0;
-          }
-        }
-      }
-    }
-
-    > p {
-      padding: 10px;
-      margin: 0;
-      text-align: center;
-    }
-  }
-}
