@@ -11,14 +11,14 @@ import plumber from 'gulp-plumber';
 import babel from 'gulp-babel';
 
 const reload = browserSync.reload;
-const proxyUrl = '';
+const proxyUrl = 'blueprint.local';
 const sass = gulpSass(dartSass);
 
 const paths = {
     scripts: {
         source: 'assets/js/scripts.js',
         destination: 'dist/js/',
-        destinationWatcher: 'dist/js/script.min.js'
+        destinationWatcher: 'dist/js/scripts.min.js'
     },
     sass: {
         source: 'assets/sass/styles.scss',

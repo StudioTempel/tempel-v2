@@ -1,7 +1,7 @@
 <?php global $block;
 $class = '';
-$layout = $block['layout'];
-$size = $block['size'];
+$layout = $block['layout'] ?? '';
+$size = $block['size'] ?? '';
 ?>
 <section class="text <?= $class; ?>">
     <div class="container">

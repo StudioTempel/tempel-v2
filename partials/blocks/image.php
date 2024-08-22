@@ -1,7 +1,10 @@
 <?php global $block;
+$class = '';
+$layout = $block['layout'] ?? '';
+$size = $block['size'] ?? '';
 ?>
-<section class="image">
+<section class="image <?= $class; ?>">
     <div class="container">
-        // get image part
+        <?php partial('parts/image'); ?>
     </div>
 </section>

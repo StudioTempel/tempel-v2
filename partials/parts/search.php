@@ -1,6 +1,6 @@
 <!-- Voeg dit toe waar je de zoekbalk wilt plaatsen -->
 <form id="searchform" role="search" method="get" action="<?php echo home_url('/'); ?>">
-    <input type="text" id="search-input" name="s" placeholder="Search..." autocomplete="off" />
+    <input type="text" id="search-input" name="s" placeholder="Zoeken" autocomplete="off" />
     <div id="search-results"></div>
 </form>
 
@@ -37,7 +37,7 @@
                             resultsHtml += '</ul>';
                             searchResults.innerHTML = resultsHtml;
                         } else {
-                            searchResults.innerHTML = '<p>No results found</p>';
+                            searchResults.innerHTML = '<p>Geen resultaten gevonden</p>';
                         }
                     } catch (e) {
                         console.error('Error parsing JSON:', e);

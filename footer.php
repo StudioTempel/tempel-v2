@@ -32,7 +32,7 @@
 <!--            --><?php //partial('parts/socials'); ?>
         </article>
         <article>
-<!--     --><?php //partial('parts/builtby'); ?>
+     <?php partial('parts/builtby'); ?>
         </article>
     </div>
 </footer>

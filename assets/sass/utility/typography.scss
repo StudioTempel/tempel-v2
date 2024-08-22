@@ -1,0 +1,115 @@
+@mixin typography() {
+  padding: 0;
+  margin: 0 0 25px 0;
+}
+
+@mixin bodyfont() {
+  font-family: 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  @include font-size(1.8, 0.4);
+  font-weight: 400;
+  line-height: 1.5;
+  color: #333;
+  @include mobile() {
+    @include font-size(1.6, 0.4);
+  }
+}
+
+@mixin paragraph() {
+  @include font-size(1.8, 1);
+  @include tabletLandscape {
+    @include font-size(1.6, 1);
+  }
+  @include mobile() {
+    @include font-size(1.4, 1);
+  }
+  &.large {
+    @include font-size(2.2, 0.4);
+    @include tabletLandscape {
+      @include font-size(2, 0);
+    }
+    @include mobile() {
+      @include font-size(1.8, 0);
+    }
+  }
+}
+
+@mixin h1 {
+  @include font-size(7, 0);
+  @include tabletLandscape {
+    @include font-size(6, 0);
+  }
+  @include mobile() {
+    @include font-size(5, 0);
+  }
+}
+
+@mixin h2 {
+  @include font-size(5, 0.4);
+  @include tabletLandscape {
+    @include font-size(4, 0);
+  }
+  @include mobile() {
+    @include font-size(3, 0);
+  }
+}
+
+@mixin h3 {
+  @include font-size(3, 0.4);
+  @include tabletLandscape {
+    @include font-size(2.5, 0);
+  }
+  @include mobile() {
+    @include font-size(2.2, 0);
+  }
+}
+
+@mixin h4 {
+  @include font-size(2.2, 0.4);
+  @include tabletLandscape {
+    @include font-size(2, 0);
+  }
+  @include mobile() {
+    @include font-size(1.8, 0);
+  }
+}
+
+h1, h2, h3, h4, h5, p {
+  @include typography();
+}
+
+p {
+  @include paragraph();
+}
+
+h1 {
+  @include h1;
+}
+
+h2 {
+  @include h2;
+}
+
+h3 {
+  @include h3;
+}
+
+h4, h5, h6 {
+  @include h4;
+}
+
+.h1 {
+  @include h1;
+}
+
+.h2 {
+  @include h2;
+}
+
+.h3 {
+  @include h3;
+}
+
+.h4, .h5, .h6 {
+  @include h4;
+}

@@ -1,0 +1,132 @@
+//Font size
+$html-font-size : 62.5%;
+
+@mixin font-size($sizeValue: 1, $lineHeightOffset: false) {
+  font-size: ($sizeValue * 10) * 1px;
+  font-size: $sizeValue * 1rem;
+  @if $lineHeightOffset {
+    line-height: (($sizeValue + $lineHeightOffset) * 10) * 1px;
+    line-height: ($sizeValue + $lineHeightOffset) * 1rem;
+  }
+}
+@mixin line-height($sizeValue: 1) {
+  line-height: ($sizeValue * 10) * 1px;
+  line-height: $sizeValue * 1rem;
+}
+
+//Positioning mixins
+
+@mixin center-horizontal() {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+@mixin center-vertical() {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin center-total() {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+
+//Breakpoints
+
+@mixin mobileSmall() {
+  @media (max-width: 360px) {
+    @content;
+  }
+}
+
+@mixin mobile() {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin tabletPortrait() {
+  @media (max-width: 800px) {
+    @content;
+  }
+}
+
+@mixin tabletLandscape() {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin laptopSmall() {
+  @media (max-width: 1300px) {
+    @content;
+  }
+}
+
+
+@mixin aboveMobileSmall() {
+  @media (min-width: 360px) {
+    @content;
+  }
+}
+
+@mixin aboveMobile() {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+
+@mixin aboveTabletPortrait() {
+  @media (min-width: 800px) {
+    @content;
+  }
+}
+
+@mixin aboveTabletLandscape() {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin aboveLaptopSmall() {
+  @media (min-width: 1300px) {
+    @content;
+  }
+}
+
+@mixin radius {
+    border-radius: $radius;
+}
+
+@mixin radius-top {
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+}
+
+@mixin radius-bottom {
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+}
+
+@mixin radius-left {
+    border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+}
+
+@mixin radius-right {
+    border-top-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+}
+
+
+
