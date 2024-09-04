@@ -1,0 +1,14 @@
+.button {
+  display: inline-flex;
+  padding: var(--tmpl--aspect--button-padding);
+  margin-bottom: 25px;
+  -webkit-appearance: none;
+  background: var(--tmpl--aspect--button-bg);
+  color: var(--tmpl--aspect--button-color);
+  border: var(--tmpl--aspect--button-border);
+  border-radius: var(--tmpl--aspect--button-radius);
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  border: var(--tmpl--aspect--button-border);
+}

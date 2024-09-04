@@ -25,6 +25,7 @@
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
             xhr.onload = function() {
+                console.log(this.responseText);
                 if (this.status === 200) {
                     try {
                         let response = JSON.parse(this.responseText);

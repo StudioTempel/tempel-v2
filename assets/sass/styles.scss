@@ -1,26 +1,23 @@
 //Imports
+@import "utility/normalize";
 @import "utility/keyframes";
 @import "utility/variables";
 @import "utility/mixins";
 @import "utility/typography";
-@import "utility/default";
+@import "utility/defaults";
+@import "utility/accessibility";
 
-@import "blocks/navigation";
-@import "blocks/buttons";
-@import "blocks/searchform";
-
+@import "parts/button";
+@import "parts/search";
 
 html {
   font-size: $html-font-size;
-  max-width: 100%;
   overflow-x: hidden;
 
   body {
     @include bodyfont();
   }
 }
-
-
 
 ul, ol {
   @include typography();
@@ -37,30 +34,42 @@ i, em {
 
 a {
   transition: all .4s ease;
-  color: $black;
+  color: var(--tmpl--aspect--link-color);
 }
 
-
-
-
-
-section, nav {
+section, nav, header, footer {
+  position: relative;
   width: 100%;
-  margin: 50px 0;
+
+  .container {
+    width: 100%;
+    max-width: $container-max;
+    padding: 0 $container-padding;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: $container-gap;
+
+    &.wide {
+      max-width: 1500px;
+    }
+
+    &.full {
+      max-width: 100%;
+    }
+
+    article, > div {
+      position: relative;
+      flex: 1 1 300px;
+    }
+  }
 }
 
-.container {
-  width: 100%;
-  max-width: $container-max;
-  margin: 0 auto;
-  padding: 0 $container-padding;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: $container-gap;
+p#breadcrumbs {
+  margin-bottom: 10px;
 }
 
-article {
-  flex: 0 auto;
+section {
+  margin-top: 100px;
 }
 

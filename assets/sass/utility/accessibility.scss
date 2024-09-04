@@ -1,0 +1,23 @@
+.screen-reader-text {
+  position: absolute;
+  @include center-horizontal;
+  top: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  @include font-size(1.8, 0);
+  transition: none;
+
+  &:focus {
+    clip: auto;
+    height: auto;
+    width: auto;
+    overflow: visible;
+    white-space: normal;
+    padding: 10px 15px;
+  }
+}

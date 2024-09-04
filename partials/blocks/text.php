@@ -1,17 +1,15 @@
 <?php global $block;
-$class = '';
-$layout = $block['layout'] ?? '';
-$size = $block['size'] ?? '';
-?>
-<section class="text <?= $class; ?>">
-    <div class="container">
-        <?php if ($layout == 'text') {
-            // get text part
-        } else if ($layout == 'text-form') {
-            // get text part
-            // get form part
-        } else if ($layout == 'text-image') {
-        } ?>
+$layout = $block['layout'] ?? 'text';
+$position = $block['position'] ?? 'left';
+$class = $layout . ' ' . $position;
+$id = '';
 
+$class = apply_filters('tmpl_block_text_class', $class, '');
+?>
+<section class="<?= $class; ?>">
+    <?php do_action('text_before'); ?>
+    <div class="container">
+        <?php layout($layout, $block); ?>
     </div>
+    <?php do_action('text_after'); ?>
 </section>

@@ -1,11 +1,13 @@
 <?php
-$instagram_link = get_field('instagram_link', 'option');
-$facebook_link = get_field('facebook_link', 'option');
-$linkedin_link = get_field('linkedin_link', 'option');
-$youtube_link = get_field('youtube_link', 'option');
-$x_link = get_field('x_link', 'option');
-$tiktok_link = get_field('tiktok_link', 'option');
-$snapchat_link = get_field('snapchat_link', 'option');
+$socials = get_field('socials', 'option');
+
+$instagram_link = $socials['instagram'];
+$facebook_link = $socials['facebook'];
+$linkedin_link = $socials['linkedin'];
+$youtube_link = $socials['youtube'];
+$x_link = $socials['x'];
+$tiktok_link = $socials['tiktok'];
+$snapchat_link = $socials['snapchat'];
 if ($facebook_link || $tiktok_link || $instagram_link || $youtube_link || $linkedin_link || $snapchat_link || $x_link) { ?>
     <ul class="socials">
         <?php

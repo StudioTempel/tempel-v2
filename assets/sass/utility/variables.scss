@@ -1,15 +1,73 @@
+:root {
+  // Font
+
+  //// Body Font
+  --tmpl--preset--font-size--body: 1.8rem;
+  --tmpl--preset--line-height--body: 2.2rem;
+
+  //// Paragraph
+  --tmpl--preset--font-size--paragraph: 1.8rem;
+  --tmpl--preset--line-height--paragraph: 2.8rem;
+
+  //// Heading 1
+  --tmpl--preset--font-size--h1: 7rem;
+  --tmpl--preset--line-height--h1: 7rem;
+
+  //// Heading 2
+  --tmpl--preset--font-size--h2: 5rem;
+  --tmpl--preset--line-height--h2: 5.4rem;
+
+  //// Heading 3
+  --tmpl--preset--font-size--h3: 3rem;
+  --tmpl--preset--line-height--h3: 3.4rem;
+
+  //// Heading 4
+  --tmpl--preset--font-size--h4: 2.5rem;
+  --tmpl--preset--line-height--h4: 2.8rem;
+
+  //// Heading 5
+  --tmpl--preset--font-size--h5: 2.5rem;
+  --tmpl--preset--line-height--h5: 2.8rem;
+
+  // colors
+  --tmpl--color--bg: #f2f2f2;
+  --tmpl--color--white: #FFFFFF;
+  --tmpl--color--black: #000000;
+  --tmpl--color--blue: #0091FF;
+  --tmpl--color--grey: #6D7278;
+  --tmpl--color--border: #979797;
+
+  // Aspects
+  //// General
+  --tmpl--aspect--radius: 5px;
+  --tmpl--aspect--text-spacing: 0 0 25px 0;
+
+  //// Container
+  --tmpl--aspect--container-padding: 50px;
+  --tmpl--aspect--container-gap: 50px;
+  --tmpl--aspect--container-max: 1200px;
+
+  //// Button
+  --tmpl--aspect--button-padding: 15px 30px;
+  --tmpl--aspect--button-radius: 50px;
+  --tmpl--aspect--button-border: none;
+  --tmpl--aspect--button-bg: var(--tmpl--color--black);
+  --tmpl--aspect--button-color: var(--tmpl--color--white);
+
+  //// Links
+  --tmpl--aspect--link-color: var(--tmpl--color--black);
+}
+
 //Defaults
-$container-max: 1200px;
-$container-padding: 50px;
-$container-gap : 50px;
-$radius: 5px;
+$container-max: var(--tmpl--aspect--container-max);
+$container-padding: var(--tmpl--aspect--container-padding);
+$container-gap: var(--tmpl--aspect--container-gap);
+$radius: var(--tmpl--aspect--radius);
 
 //Colors
-$bg : #f2f2f2;
-$white : #ffffff;
-$black : #000000;
-$blue : #0091FF;
-$grey: #6D7278;
-$border : #979797;
-
-
+$bg: var(--tmpl--color--bg);
+$white: var(--tmpl--color--white);
+$black: var(--tmpl--color--black);
+$blue: var(--tmpl--color--blue);
+$grey: var(--tmpl--color--grey);
+$border: var(--tmpl--color--border);

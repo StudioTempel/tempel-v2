@@ -1,15 +1,16 @@
 @mixin typography() {
   padding: 0;
-  margin: 0 0 25px 0;
+  margin: var(--tmpl--aspect--text-spacing);
 }
 
 @mixin bodyfont() {
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
-  @include font-size(1.8, 0.4);
+  //@include font-size(1.8, 0.4);
+  font-size: var(--tmpl--preset--font-size--paragraph);
+  line-height: var(--tmpl--preset--line-height--paragraph);
   font-weight: 400;
-  line-height: 1.5;
-  color: #333;
+  color: var(--tmpl--color--black);
   @include mobile() {
     @include font-size(1.6, 0.4);
   }
@@ -79,37 +80,34 @@ h1, h2, h3, h4, h5, p {
 }
 
 p {
-  @include paragraph();
+  //@include paragraph();
+  font-size: var(--tmpl--preset--font-size--paragraph);
+  line-height: var(--tmpl--preset--line-height--paragraph);
 }
 
-h1 {
-  @include h1;
+h1, .h1 {
+  //@include h1;
+  font-size: var(--tmpl--preset--font-size--h1);
+  line-height: var(--tmpl--preset--line-height--h1);
 }
 
-h2 {
-  @include h2;
+h2, .h2 {
+  //@include h2;
+  font-size: var(--tmpl--preset--font-size--h2);
+  line-height: var(--tmpl--preset--line-height--h2);
+
 }
 
-h3 {
-  @include h3;
+h3, .h3 {
+  //@include h3;
+  font-size: var(--tmpl--preset--font-size--h3);
+  line-height: var(--tmpl--preset--line-height--h3);
 }
 
-h4, h5, h6 {
-  @include h4;
-}
-
-.h1 {
-  @include h1;
-}
-
-.h2 {
-  @include h2;
-}
-
-.h3 {
-  @include h3;
-}
-
-.h4, .h5, .h6 {
-  @include h4;
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  //@include h4;
+    font-size: var(--tmpl--preset--font-size--h4);
+    line-height: var(--tmpl--preset--line-height--h4);
 }

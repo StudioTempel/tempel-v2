@@ -1,6 +1,7 @@
+<?php tha_footer_before(); ?>
 <footer>
+    <?php tha_footer_top(); ?>
     <div class="container">
-
         <?php $footer_text = get_field('footer_text', 'option');
         if ($footer_text) {
             echo '<article>' . $footer_text . '</article>';
@@ -29,17 +30,17 @@
             ?>
         </article>
         <article>
-<!--            --><?php //partial('parts/socials'); ?>
+            <?php partial('parts/socials'); ?>
         </article>
         <article>
-     <?php partial('parts/builtby'); ?>
+            <?php partial('parts/builtby'); ?>
         </article>
     </div>
+    <?php tha_footer_bottom(); ?>
 </footer>
-
+<?php tha_footer_after(); ?>
+</div>
+<?php tha_body_bottom(); ?>
 <?php wp_footer(); ?>
-
-
-
 </body>
 </html>
