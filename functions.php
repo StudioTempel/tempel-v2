@@ -2,18 +2,6 @@
 
 require_once "inc/core.php";
 
-function tmpl_disable_pages() : void
-{
-    if (is_tag() || is_category() || is_tax() || is_date() || is_author() || is_search()) {
-        global $wp_query;
-        $wp_query->set_404();
-        status_header(404);
-        get_template_part(404);
-        exit();
-    }
-}
-add_action('template_redirect', 'tmpl_disable_pages');
-
 /**
  * Enqueue scripts and styles with automatic versioning based on file modification time
  * Files enqueued with the 'wp_enqueue_script' hook to prevent loading on admin pages
@@ -86,16 +74,16 @@ if(!function_exists('tmpl_setup')) {
             'footer' => __('Footer menu', LANG_KEY),
         ]);
         
-        // Register Sidebars
-//        register_sidebar([
-//            'name' => __('Sidebar', LANG_KEY),
-//            'id' => 'sidebar',
-//            'description' => __('Widgets in deze sidebar worden getoond op de blogpagina.', LANG_KEY),
-//            'before_widget' => '<section id="%1$s" class="widget %2$s">',
-//            'after_widget' => '</section>',
-//            'before_title' => '<h2 class="widget-title">',
-//            'after_title' => '</h2>',
-//        ]);
+//        Register Sidebars
+        register_sidebar([
+            'name' => __('Sidebar', LANG_KEY),
+            'id' => 'sidebar',
+            'description' => __('Widgets in deze sidebar worden getoond op de blogpagina.', LANG_KEY),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget' => '</section>',
+            'before_title' => '<h2 class="widget-title">',
+            'after_title' => '</h2>',
+        ]);
     }
 }
 add_action('after_setup_theme', 'tmpl_setup');

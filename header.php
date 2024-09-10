@@ -37,6 +37,6 @@ header("Content-Security-Policy: script-src 'self' 'unsafe-inline' https://cdn.c
     <?php include_once 'template-parts/navigation.php'; ?>
     
     <?php tha_header_before(); ?>
-    <?php include_once 'template-parts/hero.php'; ?>
+    <?php include_once 'template-parts/header.php'; ?>
     <?php tha_header_after(); ?>
     

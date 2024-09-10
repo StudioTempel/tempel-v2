@@ -178,3 +178,8 @@ function get_acf_image($field, $size = 'full', $class = null, $alt = null)
     get_image($image, $size, $class, $alt);
 }
 
+function tempel_form($form_id, $title = false, $description = false, $ajax = true) {
+    if (function_exists('gravity_form')) {
+        gravity_form($form_id, $title, $description, false, '', $ajax, 0);
+    }
+}

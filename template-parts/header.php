@@ -27,7 +27,7 @@
 
 <?php }, 10); ?>
 
-
+<?php tha_header_top(); ?>
 <header class="header">
     <?php tha_header_before(); ?>
     <div class="container">
@@ -35,3 +35,4 @@
     </div>
     <?php tha_header_after(); ?>
 </header>
+<?php tha_header_bottom(); ?>

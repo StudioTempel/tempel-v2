@@ -30,4 +30,4 @@ function tmpl_ajax_search() : void
     
     wp_reset_postdata();
     wp_die();
-}
+}       
