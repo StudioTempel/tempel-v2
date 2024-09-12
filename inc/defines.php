@@ -6,6 +6,7 @@ const LANG_KEY = 'tempel-textdomain';
 // Define paths
 // Not allowed to define as constant, so it will remain as a define()
 define('THEME_URL', get_bloginfo('template_url'));
+define('THEME_PATH', get_template_directory());
 const ASSET_URL = THEME_URL . '/dist';
 const INCLUDES_URL = THEME_URL . '/includes';
 const VENDOR_URL = ASSET_URL . '/vendor';

@@ -87,6 +87,3 @@ if(!function_exists('tmpl_setup')) {
     }
 }
 add_action('after_setup_theme', 'tmpl_setup');
-
-
-

@@ -28,9 +28,6 @@ $size_class = apply_filters('nav_desktop_width', 'full');
             );
             wp_nav_menu($defaults);
             ?>
-            <a href="#" class="menu-trigger">
-                <span class="line"></span>
-            </a>
             <?php partial('parts/search'); ?>
         </div>
     </div>

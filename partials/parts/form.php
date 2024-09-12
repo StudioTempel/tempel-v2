@@ -10,7 +10,7 @@ $id = $args['form'];
 
 <?php if($id && function_exists('gravity_form')): ?>
     <div class="form">
-        <?php gravity_form($id, false, false, false, '', true, 1); ?>
+        <?php tempel_form($id, false, false); ?>
     </div>
 <?php endif; ?>
 

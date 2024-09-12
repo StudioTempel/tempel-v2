@@ -17,7 +17,11 @@ if ($index === 0) {
 ?>
 
 <?php if($text): ?>
+<?php tempel_tabs_item_before(); ?>
 <div class="tab-item <?= $class; ?>" data-tab="tab-<?= $index; ?>">
+    <?php tempel_tabs_item_top(); ?>
     <?= $text ?>
+    <?php tempel_tabs_item_bottom(); ?>
 </div>
+<?php tempel_tabs_item_after(); ?>
 <?php endif; ?>

@@ -51,13 +51,14 @@ function svg($partial)
     if ($template) include($template); else echo 'SVG not found: ' . $partial;
 }
 
-function get_image($image, $size = 'full', $class = null, $alt = null): void
+function get_image($image, $size = 'full', $size_mobile = 'medium', $class = null, $alt = null): void
 {
     if ($image) {
         if (is_int($image)) {
             $image = wp_get_attachment_image($image, $size, false, ['class' => $class, 'alt' => $alt]);
-            echo $image;
+            if(wp_is_mobile()) $image = wp_get_attachment_image($image, $size_mobile, false, ['class' => $class, 'alt' => $alt]);
             
+            echo $image;
         } else {
             echo 'Provide an image ID';
         }
@@ -172,10 +173,10 @@ function get_acf_option($field)
     return null;
 }
 
-function get_acf_image($field, $size = 'full', $class = null, $alt = null)
+function get_acf_image($field, $size = 'full', $size_mobile = 'large', $class = null, $alt = null)
 {
     $image = get_acf_field($field);
-    get_image($image, $size, $class, $alt);
+    get_image($image, $size, $size_mobile, $class, $alt);
 }
 
 function tempel_form($form_id, $title = false, $description = false, $ajax = true) {

@@ -6,10 +6,12 @@ $id = '';
 
 $class = apply_filters('tmpl_block_text_class', $class, '');
 ?>
+<?php tempel_text_before(); ?>
 <section class="<?= $class; ?>">
-    <?php do_action('text_before'); ?>
+    <?php tempel_text_top(); ?>
     <div class="container">
         <?php layout($layout, $block); ?>
     </div>
-    <?php do_action('text_after'); ?>
+    <?php tempel_text_bottom(); ?>
 </section>
+<?php tempel_text_after(); ?>
