@@ -33,10 +33,6 @@ header("Content-Security-Policy: script-src 'self' 'unsafe-inline' https://cdn.c
 <?php tha_body_top(); ?>
 <div class="site-container">
     <a href="#main" class="skip-to-content screen-reader-text">Naar content</a>
-    
     <?php include_once 'template-parts/navigation.php'; ?>
-    
-    <?php tha_header_before(); ?>
-    <?php include_once 'template-parts/header.php'; ?>
-    <?php tha_header_after(); ?>
+    <?php if(is_page()) include_once 'template-parts/header.php'; ?>
     

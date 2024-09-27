@@ -4,6 +4,26 @@ function tempel_header() {
     do_action('tempel_header');
 }
 
+function tmpl_footer() {
+    do_action('tmpl_footer');
+}
+
+function tmpl_footer_before() {
+    do_action('tmpl_footer_before');
+}
+
+function tmpl_footer_after() {
+    do_action('tmpl_footer_after');
+}
+
+function tmpl_footer_top() {
+    do_action('tmpl_footer_top');
+}
+
+function tmpl_footer_bottom() {
+    do_action('tmpl_footer_bottom');
+}
+
 /**
  * Accordion Actions
  */

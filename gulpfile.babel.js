@@ -9,6 +9,7 @@ import concat from 'gulp-concat';
 import autoprefixer from 'gulp-autoprefixer';
 import plumber from 'gulp-plumber';
 import babel from 'gulp-babel';
+import rename from 'gulp-rename';
 
 const reload = browserSync.reload;
 const proxyUrl = 'tempel-v2.local';
@@ -16,9 +17,9 @@ const sass = gulpSass(dartSass);
 
 const paths = {
     scripts: {
-        source: 'assets/js/scripts.js',
+        source: ['assets/js/parent-scripts.js'],
         destination: 'dist/js/',
-        destinationWatcher: 'dist/js/scripts.min.js'
+        destinationWatcher: 'dist/js/*.min.js'
     },
     sass: {
         source: 'assets/sass/styles.scss',
@@ -70,7 +71,9 @@ export function scripts() {
         .pipe(jshint('.jshintrc'))
         .pipe(jshint.reporter(stylish))
         .pipe(uglify())
-        .pipe(concat('parent-scripts.min.js'))
+        .pipe(rename({
+            suffix: '.min'
+        }))
         .pipe(gulp.dest(paths.scripts.destination));
 }
 

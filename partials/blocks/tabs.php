@@ -6,7 +6,7 @@ $class = apply_filters('tmpl_block_tabs_class', $class);
 
 <?php if($tabs && is_array($tabs)): ?>
     <?php tempel_tabs_before(); ?>
-    <section class="<?= $class; ?>>">
+    <section class="<?= $class; ?>">
         <?php tempel_tabs_top(); ?>
         <div class="container">
             <ul class="tabs--navigation">

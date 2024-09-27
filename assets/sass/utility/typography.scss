@@ -4,7 +4,7 @@
 }
 
 @mixin bodyfont() {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   //@include font-size(1.8, 0.4);
   font-size: var(--tmpl--preset--font-size--paragraph);

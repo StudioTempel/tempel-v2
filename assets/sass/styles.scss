@@ -73,3 +73,229 @@ section {
   margin-top: 100px;
 }
 
+
+header.archive {
+  display: none;
+  color: $black;
+}
+
+section.archive {
+  .container {
+
+    .filters {
+      flex: 100%;
+      display: flex;
+    }
+
+    .post-loop {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+
+      article {
+        flex: 100%;
+        max-width: calc(33% - 10px);
+
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+
+.post-loop-container {
+  .post-loop {
+
+  }
+
+  .row-center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .nothing-found-wrapper {
+    .nothing-found {
+      text-align: center;
+    }
+  }
+
+  .infinite-scroll {
+    svg {
+      display: block;
+      width: auto;
+      height: 4px;
+    }
+  }
+
+  .post-loop-button {
+    display: inline-flex;
+    align-items: center;
+    min-height: 46px;
+    padding: 0 15px;
+    @include font-size(1.6, 0.2);
+    border: 1px solid $black;
+    background-color: $white;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $black;
+      color: $white;
+    }
+  }
+
+  .load-more {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    button {
+      &::after {
+        content: '';
+        mask-image: url("data:image/svg+xml,%0A%3Csvg width='12.3453456px' height='7.09140087px' viewBox='0 0 12.3453456 7.09140087' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Archive' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Filters-Copy' transform='translate(-763.3273, -1980.2601)' stroke='%23000000' stroke-width='2'%3E%3Cg id='Group' transform='translate(604, 1960)'%3E%3Cpolyline id='Path-Copy-6' points='171 21 165.5 26 160 21'%3E%3C/polyline%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        mask-size: 100%;
+        width: 12px;
+        height: 7px;
+        display: inline-block;
+        background-color: $black;
+        margin-left: 10px;
+        transition: inherit;
+      }
+
+      &:hover {
+        &::after {
+          background-color: $white;
+        }
+      }
+    }
+  }
+}
+
+.pagination-wrapper {
+  nav.pagination {
+    display: flex;
+    justify-content: center;
+
+    ul {
+      display: flex;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+
+      li {
+        .page-numbers {
+          display: flex;
+          gap: 10px;
+          justify-content: center;
+          align-items: center;
+          min-height: 45px;
+          padding: 0 17px;
+          width: auto;
+          @include font-size(1.6, 0.2);
+          letter-spacing: 0.5px;
+          background-color: $white;
+          color: $black;
+          border: 1px solid $black;
+
+          &.current {
+            background-color: $black;
+            color: $white;
+          }
+
+          &.dots {
+            border-color: transparent;
+            padding: 0;
+          }
+        }
+
+        a.page-numbers {
+          text-decoration: none;
+        }
+
+        .line {
+          mask-image: url("data:image/svg+xml,%0A%3Csvg width='11px' height='1px' viewBox='0 0 11 1' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Archive' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' stroke-linecap='square'%3E%3Cg id='Filters-Copy' transform='translate(-738, -2087)' stroke='%23000000'%3E%3Cg id='Group-2' transform='translate(570, 2064)'%3E%3Cline x1='168.5' y1='23.5' x2='178.5' y2='23.5' id='Line-2'%3E%3C/line%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+          mask-size: 100%;
+          width: 11px;
+          height: 1px;
+          display: block;
+          background-color: $black;
+        }
+      }
+    }
+  }
+}
+
+
+.tempel-search {
+  label {
+    @include font-size(1.6, 0.2);
+  }
+
+  .input-wrapper {
+    .search-input {
+      display: flex;
+      align-items: center;
+      border: 1px solid $black;
+      min-height: 46px;
+      padding: 0 15px;
+
+
+      input[type='search'] {
+        border: none;
+        outline: none;
+        @include font-size(1.6, 0.2);
+      }
+
+      span.icon {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &.icon-delete {
+          display: none;
+        }
+
+        i {
+          display: inline-block;
+          background-color: $black;
+          mask-size: 100%;
+        }
+
+        .i-search {
+          mask-image: url("data:image/svg+xml,%0A%3Csvg width='13px' height='15px' viewBox='0 0 13 15' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Archive' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Filters' transform='translate(-1861, -144)' stroke='%23000000' stroke-width='2'%3E%3Cg id='Group' transform='translate(1861, 144)'%3E%3Ccircle id='Oval' cx='6' cy='6' r='5'%3E%3C/circle%3E%3Cline x1='9.5' y1='10.5' x2='12.5' y2='14.5' id='Line-4'%3E%3C/line%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+          width: 13px;
+          height: 15px;
+        }
+
+        .i-delete {
+          mask-image: url("data:image/svg+xml,%0A%3Csvg width='12.8284271px' height='12.8284271px' viewBox='0 0 12.8284271 12.8284271' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Archive' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' stroke-linecap='square'%3E%3Cg id='Filters' transform='translate(-1861.1134, -218.0858)' stroke='%23000000' stroke-width='2'%3E%3Cpath d='M1872.52763,219.5 L1862.52763,229.5 M1862.52763,219.5 L1872.52763,229.5' id='Combined-Shape'%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+          width: 12px;
+          height: 12px;
+        }
+      }
+
+      input[type='search']:focus + span.icon {
+        &.icon-search {
+          display: none;
+        }
+
+        &.icon-delete {
+          display: flex;
+        }
+      }
+    }
+  }
+}
+
+body:has(input[type='search']:focus) {
+  .search-input {
+    border-color: #212121;
+  }
+}
